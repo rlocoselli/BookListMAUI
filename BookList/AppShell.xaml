@@ -5,15 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BookList"
     Shell.FlyoutBehavior="Disabled">
-    
 
-    <TabBar>
-        <ShellContent Title="Narratif"
-                     Icon="cat.png"
-                     ContentTemplate="{DataTemplate local:NarratifPage}" />
-        <ShellContent Title="Poétique"
-                     Icon="dog.png"
-                     ContentTemplate="{DataTemplate local:PoetiquePage}" />
-    </TabBar>
-    
+    <ShellContent Title="Login"
+                  ContentTemplate="{DataTemplate local:LoginPage}"
+                  Route="NarratifPage"/>
+
 </Shell>
