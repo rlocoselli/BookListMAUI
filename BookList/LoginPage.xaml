@@ -50,7 +50,7 @@
                         FontAttributes="Bold"
                         FontSize="24"
                         HorizontalOptions="CenterAndExpand"
-                        Text="Welcome Back!"
+                        Text="Welcome !"
                         TextColor="#1C375C" />
                     <Label
                         Grid.Row="1"
