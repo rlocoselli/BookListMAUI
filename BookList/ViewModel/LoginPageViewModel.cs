@@ -16,11 +16,18 @@ namespace BookList.ViewModel
         private INavigation _navigation;
 
         public Command RegisterBtn { get; }
+        public Command LoginBtn { get; }
 
         public LoginPageViewModel(INavigation navigation)
         {
             this._navigation = navigation;
             RegisterBtn = new Command(RegisterBtnTappedAsync);
+            LoginBtn = new Command(LoginBtnTappedAsync);
+        }
+
+        private void LoginBtnTappedAsync(object obj)
+        {
+            this._navigation.PushAsync(new MainPage());
         }
 
         private void RegisterBtnTappedAsync (object obj)
