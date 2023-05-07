@@ -2,7 +2,8 @@
 <TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:BookList"
-            x:Class="BookList.MainPage">
+            x:Class="BookList.MainPage"
+            NavigationPage.HasNavigationBar="False">
     <NavigationPage Title="Narratif">
         <x:Arguments>
             <local:NarratifPage />
