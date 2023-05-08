@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="BookList.RegisterPage"
              Title="RegisterPage"
              NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+        <Style x:Key="ValidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Green" />
+        </Style>
+    </ContentPage.Resources>
+
     <Grid
         Padding="20,50,20,0"
         HorizontalOptions="FillAndExpand"
@@ -35,7 +46,14 @@
             HorizontalOptions="FillAndExpand"
             Placeholder="Email"
             Text="{Binding Email}"
-            VerticalOptions="FillAndExpand" />
+            VerticalOptions="FillAndExpand">
+            <Entry.Behaviors>
+                <toolkit:EmailValidationBehavior 
+                    InvalidStyle="{StaticResource InvalidEntryStyle}"
+                    ValidStyle="{StaticResource ValidEntryStyle}"
+                    Flags="ValidateOnValueChanged" />
+            </Entry.Behaviors>
+        </Entry>
         <Entry
             Grid.Row="3"
             HorizontalOptions="FillAndExpand"
