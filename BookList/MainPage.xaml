@@ -4,6 +4,11 @@
             xmlns:local="clr-namespace:BookList"
             x:Class="BookList.MainPage"
             NavigationPage.HasNavigationBar="False">
+    
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding CreateBookBtn}"  />
+    </TabbedPage.ToolbarItems>
+
     <NavigationPage Title="Narratif">
         <x:Arguments>
             <local:NarratifPage />

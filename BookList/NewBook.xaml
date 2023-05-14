@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="BookList.NewBook"
+             Title="New Book"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+        <Style x:Key="ValidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Green" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid
+        Padding="20,50,20,0"
+        HorizontalOptions="FillAndExpand"
+        RowSpacing="20"
+        VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label
+            Grid.Row="0"
+            FontAttributes="Bold"
+            FontSize="24"
+            HorizontalOptions="CenterAndExpand"
+            Text="New Book"
+            TextColor="#1C375C" />
+        <Label
+            Grid.Row="1"
+            Margin="0,-15,0,0"
+            HorizontalOptions="CenterAndExpand"
+            Text="Create a new book"
+            TextColor="#1C375C" />
+        <Entry
+            Grid.Row="2"
+            Margin="0,20,0,0"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Book Name"
+            Text="{Binding Title}"
+            VerticalOptions="FillAndExpand">
+        </Entry>
+        <Button
+            Grid.Row="4"
+            BackgroundColor="#1C375C"
+            Command="{Binding CreateBookBtn}"
+            CornerRadius="20"
+            Text="Save" />
+    </Grid>
+</ContentPage>

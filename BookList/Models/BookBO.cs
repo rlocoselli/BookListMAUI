@@ -5,6 +5,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookList.Database;
+using CommunityToolkit.Maui.Core.Extensions;
 
 namespace BookList.Models
 {
@@ -13,10 +15,23 @@ namespace BookList.Models
         public ObservableCollection<BookBase> GetNarratif()
         {
             ObservableCollection<BookBase> books = new ObservableCollection<BookBase>();
-            books.Add(new BookBase("Livre 1",BookType.Narratif,1));
-            books.Add(new BookBase("Livre 2", BookType.Narratif, 1));
+
+            Repository repo = new Repository();
+
+            books = repo.ListBook().ToObservableCollection();
 
             return books;
         }
+
+        public void CreateNarratif(String book)
+        {
+            Repository repo = new Repository();
+            
+            BookBase bookbase = new BookBase(book, BookType.Narratif, 1);
+
+            repo.CreateBook(bookbase);
+        }
+
+
     }
 }
