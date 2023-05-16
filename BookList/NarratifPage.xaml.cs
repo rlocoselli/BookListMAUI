@@ -1,5 +1,6 @@
 ﻿using BookList.Entities;
 using BookList.Models;
+using BookList.ViewModel;
 using System.Collections.ObjectModel;
 
 namespace BookList;
@@ -11,6 +12,7 @@ public partial class NarratifPage : ContentPage
 		InitializeComponent();
 		LoadBooks();
 		lstBooks.ItemsSource = this.Books;
+		this.BindingContext = new BookViewModel(Navigation);
 	}
 
 	public ObservableCollection<BookBase> Books { get; set; } 
